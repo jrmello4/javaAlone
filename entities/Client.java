@@ -1,8 +1,11 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private String name;
 	private String email;
@@ -39,6 +42,11 @@ public class Client {
 
 	public void setBirthdayDate(Date birthdayDate) {
 		this.birthdayDate = birthdayDate;
+	}
+
+	@Override
+	public String toString() {
+		return name + " " + sdf.format(birthdayDate)+ " - " + email;
 	}
 	
 	
